@@ -1,0 +1,100 @@
+.result-container{
+    background-color: hsl(183, 100%, 15%);
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.displaybox{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.output-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.output-group .amountBox p{
+    margin: 0;
+    color: hsl(172, 67%, 45%);
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.informationBox p{
+    margin: 0;
+    color: hsl(184, 14%, 56%);
+}
+
+.informationBox .title{
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.result-container button{
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(172, 67%, 45%);
+    cursor: pointer;
+
+}
+
+@media screen and (max-width: 900px) {
+    .result-container{
+        width: 320px;
+    }
+
+    .output-group .amountBox p{
+        font-size: 32px;
+    }
+    
+}
+
+@media screen and (max-width: 760px) {
+    .result-container{
+        width: 250px;
+    }
+    
+    .output-group .amountBox p{
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .result-container{
+        gap: 1.5em;
+        padding: 20px;
+    }
+
+    .output-group .amountBox p{
+        font-size: 18px;
+    }
+    
+    .informationBox p{
+        font-size: 12px;
+    }
+
+    .displaybox{
+        width: 90%;
+    }
+
+    .result-container button {
+        width: 90%;
+    }
+    
+
+}

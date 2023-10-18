@@ -19,10 +19,16 @@ header h2{
 
 .container {
     display: flex;
+    justify-content: space-evenly;
     background-color: hsl(0, 0%, 100%);
     padding: 40px;
     border-radius: 20px;
-    min-width: 820px;
-    min-height: 350px;
 }
 
+@media screen and (max-width: 620px) {
+    .container {
+        flex-direction: column;
+        gap: 2em;
+        
+    }
+}

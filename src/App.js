@@ -1,5 +1,6 @@
 import './App.css';
 import TipCalculateForm from './Components/Form/TipCalculateForm';
+import DisplayResult from './Components/Results/DisplayResult';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       </header>
       <main className='container'>
         <TipCalculateForm />
+        <DisplayResult />
       </main>
     </>
   );
