@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+*{
+    font-family: 'Space Mono', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(185, 41%, 84%);
+}
+
+header h2{
+    color: hsl(183, 100%, 15%);
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    background-color: hsl(0, 0%, 100%);
+    padding: 40px;
+    border-radius: 20px;
+    min-width: 820px;
+    min-height: 350px;
+}
+

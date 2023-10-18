@@ -1,10 +1,16 @@
 import './App.css';
+import TipCalculateForm from './Components/Form/TipCalculateForm';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <>
+      <header>
+        <h2>SPLI<br/>TTER</h2>
+      </header>
+      <main className='container'>
+        <TipCalculateForm />
+      </main>
+    </>
   );
 }
 
