@@ -87,7 +87,7 @@ const TipCalculateForm = (props) => {
             <div className="input-group">
                 <label htmlFor="totalPeople">Number of People</label>
                 <img src={icon_person} alt="Person Icon" id='inputIcon'/>
-                <input className={error === 'people' ? 'errorBorder' : ''} type="number" name="totalPeople" id="totalPeople" placeholder='0' onChange={(e) => inputChangeHandler('people',e.target.value)}/>
+                <input className={error === 'people' ? 'errorBorder' : '' } type="number" name="totalPeople" id="totalPeople" placeholder='0' onChange={(e) => inputChangeHandler('people',e.target.value)}/>
             </div>
         </div>
     );
