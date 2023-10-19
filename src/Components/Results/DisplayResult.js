@@ -1,18 +1,27 @@
 
+import { useState, useEffect } from 'react';
 import './DisplayResult.css'
 
 
 const DisplayResult = (props) => {
 
-    let tipPerPerson = 0.00;
-    let billPerPerson = 0.00;
+    const [tipPerPerson, setTipPerPerson] = useState(0);
+    const [billPerPerson, setBillPerPerson] = useState(0);
 
+    useEffect(() => {
+        if (props.finalData !== undefined){
+            const tip = (props.finalData.tip / 100) * props.finalData.bill;
+            const tipPerPerson = tip / props.finalData.people;
+            const totalBillPerPerson = (+props.finalData.bill + tip) / props.finalData.people;
+            setTipPerPerson(tipPerPerson);
+            setBillPerPerson(totalBillPerPerson);
+        }
+    }, [props.finalData]);
 
-    if (props.finalData !== undefined){
-        tipPerPerson = props.finalData.tip;
-        billPerPerson = props.finalData.bill;
+    const resetHandler = () => {
+        setBillPerPerson(0)
+        setTipPerPerson(0)
     }
-
 
     return (
         <div className='result-container'>
@@ -36,7 +45,7 @@ const DisplayResult = (props) => {
                     </div>
                 </div>
             </div>
-            <button>Reset</button>
+            <button onClick={resetHandler}>Reset</button>
 
         </div>
     )

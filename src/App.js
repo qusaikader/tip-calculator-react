@@ -7,6 +7,7 @@ function App() {
 
   const [data, setData] = useState();
 
+
   return (
     <>
       <header>
@@ -14,7 +15,7 @@ function App() {
       </header>
       <main className='container'>
         <TipCalculateForm dataHandler = {setData}/>
-        <DisplayResult finalData = {data}/>
+        <DisplayResult finalData = {data} />
       </main>
     </>
   );
