@@ -18,7 +18,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .input-group label{
-    display: block;
+    display: inline-block;
     color: hsl(184, 14%, 56%);
     margin-bottom: 5px;
 }
@@ -81,6 +81,20 @@ input[type="number"]::-webkit-outer-spin-button {
     background-color: hsl(189, 41%, 97%);
     color: hsl(184, 14%, 56%);
 }
+
+.errorText {
+    display: inline-block;
+    color: red;
+}
+
+.input-group .errorBorder{
+    border: 2px solid red;
+}
+
+.input-group .errorBorder:focus{
+    border: 2px solid red;
+}
+
 
 @media screen and (max-width: 900px) {
     .tipForm{

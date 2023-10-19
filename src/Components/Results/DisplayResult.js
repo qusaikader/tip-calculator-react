@@ -11,8 +11,8 @@ const DisplayResult = (props) => {
     useEffect(() => {
         if (props.finalData !== undefined){
             const tip = (props.finalData.tip / 100) * props.finalData.bill;
-            const tipPerPerson = tip / props.finalData.people;
-            const totalBillPerPerson = (+props.finalData.bill + tip) / props.finalData.people;
+            const tipPerPerson = (tip / props.finalData.people).toFixed(2);
+            const totalBillPerPerson = ((+props.finalData.bill + tip) / props.finalData.people).toFixed(2);
             setTipPerPerson(tipPerPerson);
             setBillPerPerson(totalBillPerPerson);
         }
