@@ -1,7 +1,19 @@
+
 import './DisplayResult.css'
 
 
 const DisplayResult = (props) => {
+
+    let tipPerPerson = 0.00;
+    let billPerPerson = 0.00;
+
+
+    if (props.finalData !== undefined){
+        tipPerPerson = props.finalData.tip;
+        billPerPerson = props.finalData.bill;
+    }
+
+
     return (
         <div className='result-container'>
             <div className='displaybox'>
@@ -11,7 +23,7 @@ const DisplayResult = (props) => {
                         <p>/ person</p>
                     </div>
                     <div className='amountBox'>
-                        <p>$4.27</p>
+                        <p>${tipPerPerson}</p>
                     </div>
                 </div>
                 <div className='output-group'>
@@ -20,7 +32,7 @@ const DisplayResult = (props) => {
                         <p>/ person</p>
                     </div>
                     <div className='amountBox'>
-                        <p>$34.67</p>
+                        <p>${billPerPerson}</p>
                     </div>
                 </div>
             </div>
