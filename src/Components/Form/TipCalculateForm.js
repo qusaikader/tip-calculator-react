@@ -72,7 +72,7 @@ const TipCalculateForm = (props) => {
         <div className='tipForm'>
             <div className="input-group">
                 <label htmlFor="billAmount">Bill</label>
-                <img src={icon_dollar} alt="Dollar Icon" id='inputIcon'/>
+                <img src={icon_dollar} alt="Dollar Icon" />
                 <input className={error === 'bill' ? 'errorBorder' : ''} type="number" name="billAmount" id="billAmount" placeholder='0' value={totalBill || ''}  onChange={(e) => inputChangeHandler('bill',e.target.value)}/>
             </div>
             <div className='tip-group'>
@@ -102,7 +102,7 @@ const TipCalculateForm = (props) => {
             </div>
             <div className="input-group">
                 <label htmlFor="totalPeople">Number of People</label>
-                <img src={icon_person} alt="Person Icon" id='inputIcon'/>
+                <img src={icon_person} alt="Person Icon" />
                 <input className={error === 'people' ? 'errorBorder' : '' } type="number" name="totalPeople" id="totalPeople"  placeholder='0' value={totalPpl || ''} onChange={(e) => inputChangeHandler('people',e.target.value)}/>
             </div>
         </div>
