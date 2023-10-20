@@ -21,6 +21,7 @@ const DisplayResult = (props) => {
     const resetHandler = () => {
         setBillPerPerson(0)
         setTipPerPerson(0)
+        props.resetAll(true);
     }
 
     return (

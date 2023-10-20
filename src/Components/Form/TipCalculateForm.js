@@ -9,7 +9,8 @@ const TipCalculateForm = (props) => {
     const[tipAmount, setTipAmount] = useState();
     const[error, setError] = useState();
     const [selectedTip, setSelectedTip] = useState(null);
-
+    const resetStatus = props.reset;
+    const setResetStatus = props.resetComplete;
 
     const tipPercentageOne = [5, 10, 15];
     const tipPercentageTwo = [25, 50];
@@ -27,10 +28,6 @@ const TipCalculateForm = (props) => {
 
         setSelectedTip(value);
     } 
-
-    useEffect(() => {
-        finalDataHandler();
-    }, [totalBill, totalPpl, tipAmount]);
 
     const finalDataHandler = () => {
         if(totalBill !== undefined && totalPpl !== undefined && tipAmount !== undefined){
@@ -52,13 +49,31 @@ const TipCalculateForm = (props) => {
         }
     }
 
+    
+    useEffect(() => {
+        
+        finalDataHandler();
+        // eslint-disable-next-line
+    }, [totalBill, totalPpl, tipAmount]);
+    
+
+    useEffect(() => {
+        if (resetStatus) {
+          setSelectedTip(null);
+          setTotalBill('');  
+          setTotalPpl('');  
+          setTipAmount('');
+          setResetStatus(); 
+        }
+      }, [resetStatus, setResetStatus]);
+
 
     return (
         <div className='tipForm'>
             <div className="input-group">
                 <label htmlFor="billAmount">Bill</label>
                 <img src={icon_dollar} alt="Dollar Icon" id='inputIcon'/>
-                <input className={error === 'bill' ? 'errorBorder' : ''} type="number" name="billAmount" id="billAmount" placeholder='0' onChange={(e) => inputChangeHandler('bill',e.target.value)}/>
+                <input className={error === 'bill' ? 'errorBorder' : ''} type="number" name="billAmount" id="billAmount" placeholder='0' value={totalBill || ''}  onChange={(e) => inputChangeHandler('bill',e.target.value)}/>
             </div>
             <div className='tip-group'>
                 <p>Select Tip %</p>
@@ -81,13 +96,14 @@ const TipCalculateForm = (props) => {
                     )
                 })
                 }
-                <li key='custom' className='custom_tip'>Custom</li>
+                
                 </ul>
+                
             </div>
             <div className="input-group">
                 <label htmlFor="totalPeople">Number of People</label>
                 <img src={icon_person} alt="Person Icon" id='inputIcon'/>
-                <input className={error === 'people' ? 'errorBorder' : '' } type="number" name="totalPeople" id="totalPeople" placeholder='0' onChange={(e) => inputChangeHandler('people',e.target.value)}/>
+                <input className={error === 'people' ? 'errorBorder' : '' } type="number" name="totalPeople" id="totalPeople"  placeholder='0' value={totalPpl || ''} onChange={(e) => inputChangeHandler('people',e.target.value)}/>
             </div>
         </div>
     );
